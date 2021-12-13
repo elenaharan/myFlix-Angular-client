@@ -31,7 +31,7 @@ public userRegistration(userDetails: any): Observable<any> {
 
 public userLogin(userDetails: any): Observable<any> {
   console.log(userDetails);
-  return this.http.post(apiUrl + 'login', userDetails).pipe(catchError(this.handleError));
+  return this.http.post(apiUrl + 'login/', userDetails).pipe(catchError(this.handleError));
 }
 
 private handleError(error: HttpErrorResponse): any {
@@ -107,7 +107,7 @@ getAUser(username: any): Observable<any> {
   );
 }
 
-//Get favourite movies for a user
+//Get favorite movies for a user
 getFavourites(username: any): Observable<any> {
   return this.http.get(apiUrl + `users/profile/${username}`, {
     headers: new HttpHeaders(
@@ -158,7 +158,7 @@ deleteUser(username: any): Observable<any> {
   );
 }
 
-//Delete amovie from favourites
+//Delete a movie from favorites
 deleteFromFavourites(username: any, _id: string): Observable<any> {
   return this.http.delete(apiUrl + `users/${username}/movies/${_id}`, {
     headers: new HttpHeaders(
