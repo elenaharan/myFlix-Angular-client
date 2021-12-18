@@ -96,7 +96,8 @@ getAGenre(): Observable<any> {
 
 //Get a user
 getAUser(username: any): Observable<any> {
-  return this.http.get(apiUrl + `users/${username}`, {
+  const user = localStorage.getItem('user');
+  return this.http.get(apiUrl + `users/profile/${user}`, {
     headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
