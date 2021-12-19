@@ -3,6 +3,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { EditUserProfileComponent } from '../edit-user-profile/edit-user-profile.component';
 
 
 @Component({
@@ -28,6 +29,12 @@ export class UserProfileComponentComponent implements OnInit {
     const user = localStorage.getItem('user');
     this.fetchApiData.getAUser(user).subscribe((response: any) => {
       this.user = response;
+    });
+  }
+
+  openEditProfileDialog(): void {
+    this.dialog.open(EditUserProfileComponent, {
+      width: '300px',
     });
   }
 

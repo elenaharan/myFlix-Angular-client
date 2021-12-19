@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   toProfile(): void {
     const user = localStorage.getItem('user');
-    this.router.navigate([`users/profile/${user}`])
+    this.router.navigate(['/profile'])
       .then(success =>( success))
       .catch(console.error);
   }

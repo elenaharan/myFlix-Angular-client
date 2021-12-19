@@ -28,10 +28,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: UserProfileComponentComponent},
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -46,7 +48,8 @@ const appRoutes: Routes = [
     SynopsisComponent,
     GenreCardComponent,
     UserProfileComponentComponent,
-    NavbarComponent
+    NavbarComponent,
+    EditUserProfileComponent
   ],
   imports: [
     BrowserModule,

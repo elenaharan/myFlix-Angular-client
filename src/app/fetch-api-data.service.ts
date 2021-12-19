@@ -134,8 +134,9 @@ AddToFavourites(username: any, _id: string): Observable<any> {
 }
 
 //Edit user
-editUser(userDetails: any, username: any): Observable<any> {
-  return this.http.put(apiUrl + `users/update/${username}`, userDetails, {
+editUser(userDetails: any): Observable<any> {
+  const user = localStorage.getItem('user');
+  return this.http.put(apiUrl + `users/update/${user}`, userDetails, {
     headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
