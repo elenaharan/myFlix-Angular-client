@@ -1,16 +1,36 @@
 .card {
-  height: 550px;
+  height: 500px;
   width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5px;
+  margin: 10px;
   margin-bottom: 10px;
-  padding: 0;
+  padding: 0px;
   border-radius: 10px 10px 0 0;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
     transform: scale(1.05);
   }
+  mat-icon {
+    //color: #89CFF0;
+    //color: #0091ea;
+    color: #40c4ff;
+  }
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 30px;
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 25px;
 }

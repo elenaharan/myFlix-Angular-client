@@ -1,17 +1,13 @@
-<div id="main-container" style="background-color: white; height: 100%;">
+<div id="main-container">
   <app-navbar></app-navbar>
-<div class="user-profile-wrapper">
-  
-<mat-card>
+  <mat-card>
     <mat-card-header>
-        <mat-card-title>
-            <h2>Hello {{ user.Username }}</h2>
-        </mat-card-title>
+      <mat-card-title><h2>Hello {{ user.Username }}!</h2></mat-card-title>
     </mat-card-header>
     <mat-card-content class="card-content">
-        <p><b>Username</b>: {{ user.Username }}</p>
-        <p><b>Password: ********</b></p>
-        <p><b>Email</b>:{{ user.Email }}</p>
+        <p>Username: <i>{{ user.Username }}</i></p>
+        <p>Password: <i>********</i></p>
+        <p>Email:<i>{{ user.Email }}</i></p>
     </mat-card-content>  
     <mat-card-actions>
       <button
@@ -25,23 +21,29 @@
         class="float-right"
         mat-raised-button
         color="warn"
-        (click)="deleteProfile()">Delete</button>
+        (click)="deleteProfile()">Delete Profile</button>
     </mat-card-actions>
-</mat-card>
+  </mat-card>
 </div>
 
-<h1>Favorite Movies</h1>
-<div>
-  <div *ngFor="let fav of favoriteMovies">
-    <h2>{{fav.Title}}</h2>
-    <img src={{fav.Imagepath}} />
-    <button mat-raised-button color="warn" (click)="removeFromFavs(fav._id, fav.Title)">Remove from Favorites</button>
-  </div>
+<h2>Your Favorite Movies</h2>
+<div id="favMovies-wrapper">
+  <mat-card *ngFor="let fav of favoriteMovies">
+    <mat-card-header>
+      <mat-card-title><h3>{{fav.Title}}</h3></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img src={{fav.Imagepath}} />
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button 
+      color="warn" 
+      (click)="removeFromFavs(fav._id, fav.Title)">
+      Remove from Favorites</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 
-
-
-</div>
 
 
 
