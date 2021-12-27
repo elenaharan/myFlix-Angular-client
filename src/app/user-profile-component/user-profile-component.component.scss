@@ -1,22 +1,24 @@
-mat-card {
+.card {
+    height: 500px;
+    width: 350px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 25%;
-    height: 80%;
-    margin: auto;
-    
-    h2 {
-      font-weight: 300;
-      font-size: 24px;
+    align-items: center;
+    margin: 10px;
+    margin-bottom: 10px;
+    padding: 0px;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    &:hover {
+      transform: scale(1.05);
     }
-    p {
-        font-weight: 300;
-        font-size: 16px;
-        line-height: -20px;
+    mat-icon {
+      //color: #89CFF0;
+      //color: #0091ea;
+      //color: #40c4ff;
     }
-}
+  }
 
 h2 {
     font-weight: 300;
@@ -38,7 +40,8 @@ h3 {
 
 }
 
-#favMovies-wrapper {
+
+#content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -47,6 +50,4 @@ h3 {
     width: 80%;
     max-width: 80%;
     margin: auto;
-
-
-}
+  }

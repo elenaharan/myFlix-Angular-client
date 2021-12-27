@@ -1,6 +1,6 @@
 <div id="main-container">
   <app-navbar></app-navbar>
-  <mat-card fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%" fxFlex.lg="25%">
+  <mat-card>
     <mat-card-header>
       <mat-card-title><h2>Hello {{ user.Username }}!</h2></mat-card-title>
     </mat-card-header>
@@ -27,22 +27,26 @@
 </div>
 
 <h2>Your Favorite Movies</h2>
-<div id="favMovies-wrapper">
-  <mat-card *ngFor="let fav of favoriteMovies">
-    <mat-card-header>
-      <mat-card-title><h3>{{fav.Title}}</h3></mat-card-title>
-      <mat-card-actions>
-        <mat-icon 
-        color="primary" 
-        (click)="removeFromFavs(fav._id, fav.Title)">
-        favorite</mat-icon>
-      </mat-card-actions>
-    </mat-card-header>
-    <mat-card-content>
-      <img src={{fav.Imagepath}} />
-    </mat-card-content>
-  </mat-card>
+<div id="content">
+  <div id="movies-container" *ngFor="let fav of favoriteMovies">
+    <mat-card class="card" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%" fxFlex.lg="25%">
+      <mat-card-header>
+        <mat-card-title><h3>{{fav.Title}}</h3></mat-card-title>
+        <mat-card-actions>
+          <mat-icon 
+          color="primary" 
+          (click)="removeFromFavs(fav._id, fav.Title)">
+          favorite</mat-icon>
+        </mat-card-actions>
+      </mat-card-header>
+      <mat-card-content>
+        <img src={{fav.Imagepath}} />
+      </mat-card-content>
+    </mat-card>
+  </div>
+
 </div>
+
 
 
 
