@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-login-form.component.scss']
 })
 
-export class UserLoginFormComponent {
+export class UserLoginFormComponent implements OnInit {
   
   @Input() userData = { Username: '', Password: '' };
 
@@ -24,45 +24,20 @@ export class UserLoginFormComponent {
     public snackBar: MatSnackBar,
     public router: Router) { }
 
-  //ngOnInit(): void {
-  //}
+  ngOnInit(): void {
+  }
 
   //This is the function responsible for sending the form inputs to backend
   loginUser(): void {
-    this.fetchApiData.userLogin(this.userData).subscribe({
-      next: (result: { token: string; user: { Username: string } }) => {
-        localStorage.setItem('token', result.token)
-        localStorage.setItem('user', this.userData.Username)
-        /*this.snackBar.open(result.user.Username + ' logged in', {
-          duration: 3000
-        })
-      },
-      error: () => {
-        this.snackBar.open("This user doesn't exist", {
-          duration: 3000
-        })*/
-      },
-      complete: () => {
-        this.dialogRef.close()
+    this.fetchApiData.userLogin(this.userData).subscribe((result) => {
+        localStorage.setItem('token', result.token);
+        localStorage.setItem('user', this.userData.Username);
+        this.dialogRef.close();
         this.router.navigate(['movies']);
-      }
-    })
-    //this.fetchApiData.userLogin(this.userData).subscribe(response) = > {
-      //localStorage.setItem('user', response.user.Username);
-      //localStorage.setItem('token', response.token);
-      //this.dialogRef.close();//This will close the modal on success!
-      //console.log(response);
-      //this.snackBar.open(response, 'OK', {
-      //duration: 3000
-      //});
-    //}, //(response) => {
-      //console.log(response);
-      //this.snackBar.open(response, 'OK', {
-        //duration: 3000
-      //});
-    //});
-//}
-//}
-
-  } 
+      }, (result) => {
+        this.snackBar.open(result, 'OK', {
+          duration: 3000
+        });
+    });
+    } 
   }

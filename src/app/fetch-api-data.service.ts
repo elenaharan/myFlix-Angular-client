@@ -8,6 +8,7 @@ import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://movietemple.herokuapp.com/';
 const token = localStorage.getItem('token');
+const user = localStorage.getItem('user');
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +45,7 @@ private handleError(error: HttpErrorResponse): any {
     );
   }
   return throwError(
-    'Something bad happened; please try again later.'
+    'Something went wrong; please try again later.'
   );
 }
 
@@ -109,8 +110,8 @@ getAUser(username: any): Observable<any> {
 }
 
 //Get favorite movies for a user
-getFavourites(username: any): Observable<any> {
-  return this.http.get(apiUrl + `users/profile/${username}`, {
+getFavourites(): Observable<any> {
+  return this.http.get(apiUrl + `users/profile/${user}`, {
     headers: new HttpHeaders(
       {
         Authorization: 'Bearer' + token,
@@ -121,8 +122,8 @@ getFavourites(username: any): Observable<any> {
   );
 }
 
-AddToFavourites(username: any, _id: string): Observable<any> {
-  return this.http.post(apiUrl + `users/${username}/movies/${_id}`, _id, {
+AddToFavourites(id: string): Observable<any> {
+  return this.http.post(apiUrl + `users/${user}/movies/${id}`, id, {
     headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
@@ -148,8 +149,9 @@ editUser(userDetails: any): Observable<any> {
 }
 
 //Delete user
-deleteUser(username: any): Observable<any> {
-  return this.http.delete(apiUrl + `users/${username}`, {
+deleteUser(): Observable<any> {
+
+  return this.http.delete(apiUrl + `users/${user}`, {
     headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
@@ -161,8 +163,8 @@ deleteUser(username: any): Observable<any> {
 }
 
 //Delete a movie from favorites
-deleteFromFavourites(username: any, _id: string): Observable<any> {
-  return this.http.delete(apiUrl + `users/${username}/movies/${_id}`, {
+deleteFromFavourites( _id: string): Observable<any> {
+  return this.http.delete(apiUrl + `users/${user}/movies/${_id}`, {
     headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
