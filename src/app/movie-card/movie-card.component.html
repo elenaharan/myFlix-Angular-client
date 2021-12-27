@@ -2,7 +2,8 @@
   <app-navbar></app-navbar>
   <div id="content">
     <!--<h1 style="font-weight: 300; font-size: 34px; display: flex; justify-content: center;margin-top: 50px;">Movies</h1>-->
-    <mat-card class="card" *ngFor="let movie of movies; let i=index;" style="flex: 1 1 auto;">
+    <div  class="movies-container" *ngFor="let movie of movies; let i=index;">
+    <mat-card class="card" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%" fxFlex.lg="25%">  
       <mat-card-header>
       <mat-card-title>{{movie.Title}}</mat-card-title>
         <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
@@ -45,6 +46,7 @@
           class="favorite-button-active">favorite</mat-icon>       
       </mat-card-actions>
     </mat-card>
+    </div>
 
   </div>
   
