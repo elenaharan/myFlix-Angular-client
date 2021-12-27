@@ -54,8 +54,9 @@ export class UserProfileComponentComponent implements OnInit {
   deleteProfile(): void {
     if (confirm('Are you sure you want to delete your profile?')) {
       this.fetchApiData.deleteUser().subscribe(() => {
-        localStorage.clear();
-        this.router.navigate(['welcome']);
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        this.router.navigate(['/welcome']);
         this.snackBar.open('Your account has been deleted!', 'OK', {
           duration: 3000
         });
