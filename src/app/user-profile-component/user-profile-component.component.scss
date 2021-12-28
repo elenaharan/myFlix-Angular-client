@@ -1,5 +1,5 @@
 .card {
-    height: 500px;
+    height: 380px;
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -12,11 +12,6 @@
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     &:hover {
       transform: scale(1.05);
-    }
-    mat-icon {
-      //color: #89CFF0;
-      //color: #0091ea;
-      //color: #40c4ff;
     }
   }
 

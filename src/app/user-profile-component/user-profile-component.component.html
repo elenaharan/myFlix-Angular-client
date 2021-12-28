@@ -1,30 +1,34 @@
 <div id="main-container">
   <app-navbar></app-navbar>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title><h2>Hello {{ user.Username }}!</h2></mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="card-content">
-        <p>Username: <i>{{ user.Username }}</i></p>
-        <p>Password: <i>********</i></p>
-        <p>Email:<i>{{ user.Email }}</i></p>
-    </mat-card-content>  
-    <mat-card-actions>
-      <button
-        class="float-right"
-        mat-raised-button
-        color="primary"
-        (click)="openEditProfileDialog()"
-      >
-      Edit Profile</button>
-      <button
-        class="float-right"
-        mat-raised-button
-        color="warn"
-        (click)="deleteProfile()">Delete Profile</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+  <div id="profileCard-container">
+    <mat-card class="card" style="margin: 0 auto; height: 300px;">
+      <mat-card-header>
+        <mat-card-title><h2>Hello {{ user.Username }}!</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+          <p>Username: <i>{{ user.Username }}</i></p>
+          <p>Password: <i>********</i></p>
+          <p>Email:<i>{{ user.Email }}</i></p>
+      </mat-card-content>  
+      <mat-card-actions>
+        <button
+          class="float-right"
+          mat-raised-button
+          color="primary"
+          (click)="openEditProfileDialog()"
+        >
+        Edit Profile</button>
+        <button
+          class="float-right"
+          mat-raised-button
+          color="warn"
+          (click)="deleteProfile()">Delete Profile</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+
 
 <h2>Your Favorite Movies</h2>
 <div id="content">
@@ -44,9 +48,10 @@
       </mat-card-content>
     </mat-card>
   </div>
-
 </div>
 
+
+</div>
 
 
 
