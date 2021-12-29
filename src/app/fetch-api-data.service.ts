@@ -3,7 +3,6 @@ import { catchError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://movietemple.herokuapp.com/';

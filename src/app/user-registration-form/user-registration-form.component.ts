@@ -36,7 +36,7 @@ registerUser(): void {
     //Logic for a successful user registration goes here! (to be implemented)
     this.dialogRef.close();//This will close the modal on success!
     console.log(response);
-    this.snackBar.open(this.userData.Username, 'has successfully registered!', {
+    this.snackBar.open(this.userData.Username, 'has successfully registered! Please login!', {
       duration: 3000
     });
   }, (response) => {
