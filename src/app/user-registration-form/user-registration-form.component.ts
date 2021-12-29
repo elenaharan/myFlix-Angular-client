@@ -1,3 +1,7 @@
+/**
+ * UserRegistrationFormComponent allows users to register an account
+ * @module UserRegistrationFormComponent
+ */
 import { Component, OnInit, Input } from '@angular/core';
 //You'll use this import to close the dialog on success
 import { MatDialogRef } from '@angular/material/dialog';
@@ -19,6 +23,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UserRegistrationFormComponent implements OnInit {
 
+  /**
+   * This decorator binds the form input values to userData object
+   */
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: ''};
 
   constructor(
@@ -29,8 +36,10 @@ export class UserRegistrationFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-//This is the function responsible for sending the form inputs to the backend
-// void means absence of any type at all, opposite of the any type
+/**
+ * This method is responsible for sending the form inputs to the backend.
+ * Snack bar pops up to show the outcome of this operation.
+ */
 registerUser(): void {
   this.fetchApiData.userRegistration(this.userData).subscribe((response) => {
     //Logic for a successful user registration goes here! (to be implemented)

@@ -1,3 +1,8 @@
+/**
+ * EditUserProfileComponent view lets user edit their profile info.
+ * @module EditUserProfileComponent
+ */
+
 import { Component, OnInit, Input } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -11,6 +16,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EditUserProfileComponent implements OnInit {
   user: any = {};
 
+  /**
+   * This decorator binds the form input values to the userData object
+   */
   @Input() userData = {
     Username: '',
     Password: '',
@@ -23,8 +31,18 @@ export class EditUserProfileComponent implements OnInit {
     public snackBar: MatSnackBar,  
   ) { }
 
+  /**
+   * Initializes the component
+   * @ignore
+   */
   ngOnInit(): void {}
 
+  /**
+   * Updates user info by sending it to the backend.
+   * Calls fetchApiData.editUser() with this.userData details
+   * and locally stores user name.
+   * A snackbar confirms whether the operation is completed.
+   */
   editUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((res) => {
       this.dialogRef.close();

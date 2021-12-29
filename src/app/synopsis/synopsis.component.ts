@@ -1,3 +1,8 @@
+/**
+ * SynopsisComponent represents a dialog that a user can open to read
+ * description of each movie.
+ * @module SynopsisComponent
+ */
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 

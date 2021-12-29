@@ -1,3 +1,7 @@
+/**
+ * UserLoginFormComponent allows user to log into the app.
+ * @module UserLoginFormComponent
+ */
 import { Component, OnInit, Input } from '@angular/core';
 //You'll use this import to close the dialog on success
 import { MatDialogRef } from '@angular/material/dialog';
@@ -16,6 +20,9 @@ import { Router } from '@angular/router';
 
 export class UserLoginFormComponent implements OnInit {
   
+  /**
+   * This decorator binds the input values of the form to userData object.
+   */
   @Input() userData = { Username: '', Password: '' };
 
   constructor(
@@ -27,7 +34,10 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //This is the function responsible for sending the form inputs to backend
+  /**
+   * Sends the form inputs to backend.
+   * Snackbar pops up to inform user about the outcome of the operation.
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
         localStorage.setItem('token', result.token);

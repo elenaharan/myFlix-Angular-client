@@ -1,3 +1,7 @@
+/**
+ * GenreCardComponent enables genre dialog.
+ * @module GenreCardComponent
+ */
 import { Component, OnInit, Inject, INJECTOR } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 

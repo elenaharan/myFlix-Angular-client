@@ -1,3 +1,8 @@
+/**
+ * NavbarComponent renders a navbar to facilitate user navigation
+ * within the app.
+ * @module NavbarComponent
+ */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,20 +21,29 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Takes user to Profile view where user profile details are displayed.
+   */
   toProfile(): void {
     const user = localStorage.getItem('user');
     this.router.navigate(['/profile'])
       .then(success =>( success))
       .catch(console.error);
-    return 
   }
   
+  /**
+   * Navigates user to main page where all movies are displayed.
+   */
   toMovies(): void {
     this.router.navigate(['/movies'])
       .then(success => (success))
       .catch(console.error); 
   }
 
+  /**
+   * Logs user out.
+   * Clears local storage and navigates user to welcome page.
+   */
   logout(): void {
     localStorage.removeItem('user');
     localStorage.removeItem('token');

@@ -1,3 +1,8 @@
+/**
+ * DirectorViewComponent is a dialog window that a user can open to read bio of a movie director.
+ * @module DirectorViewComponent
+ */
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -15,6 +20,11 @@ export class DirectorViewComponent implements OnInit {
       bio: string;
     }
   ) { }
+
+  /**
+   * Initializes the component
+   * @ignore
+   */
 
   ngOnInit(): void {
   }
