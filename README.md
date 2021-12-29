@@ -1,5 +1,5 @@
+[page preview video] (https://user-images.githubusercontent.com/77856065/147708384-ea818dc0-2a85-4ef1-b2f9-9dac930dc3b4.mp4)
 # MyFlixAngularClient
-![Demo] (https://user-images.githubusercontent.com/77856065/147708384-ea818dc0-2a85-4ef1-b2f9-9dac930dc3b4.mp4)
 This is the client-side application project called myFlix based on its existing server-side code (REST API and database), with supporting documentation generated with the help of TypeDoc.<br>
 MyFlixAngularClient is a single-page, responsive movie app built with Angular, with routing and several interface views.
 
