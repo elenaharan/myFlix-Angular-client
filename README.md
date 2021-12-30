@@ -1,4 +1,4 @@
-![LiveDemo] (./demo/AngularLiveDemo_AdobeCreativeCloudExpress.gif)
+[LiveDemo] (https://github.com/elenaharan/myFlix-Angular-client/issues/5#issue-1090780298)
 # MyFlixAngularClient
 This is the client-side application project called myFlix based on its existing server-side code (REST API and database), with supporting documentation generated with the help of TypeDoc.<br>
 MyFlixAngularClient is a single-page, responsive movie app built with Angular, with routing and several interface views.
