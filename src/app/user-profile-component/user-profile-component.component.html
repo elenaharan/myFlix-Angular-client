@@ -1,0 +1,67 @@
+<div id="main-container">
+  <app-navbar></app-navbar>
+  <div id="profileCard-container">
+    <mat-card class="card" style="margin: 0 auto; height: 300px;">
+      <mat-card-header>
+        <mat-card-title><h2>Hello {{ user.Username }}!</h2></mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+          <p>Username: <i>{{ user.Username }}</i></p>
+          <p>Password: <i>********</i></p>
+          <p>Email:<i>{{ user.Email }}</i></p>
+      </mat-card-content>  
+      <mat-card-actions>
+        <button
+          class="float-right"
+          mat-raised-button
+          color="primary"
+          (click)="openEditProfileDialog()"
+        >
+        Edit Profile</button>
+        <button
+          class="float-right"
+          mat-raised-button
+          color="warn"
+          (click)="deleteProfile()">Delete Profile</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+
+
+<h2>Your Favorite Movies</h2>
+<div id="content">
+  <div id="movies-container" *ngFor="let fav of favoriteMovies">
+    <mat-card class="card" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%" fxFlex.lg="25%">
+      <mat-card-header>
+        <mat-card-title><h3>{{fav.Title}}</h3></mat-card-title>
+        <mat-card-actions>
+          <mat-icon 
+          color="primary" 
+          (click)="removeFromFavs(fav._id, fav.Title)">
+          favorite</mat-icon>
+        </mat-card-actions>
+      </mat-card-header>
+      <mat-card-content>
+        <img src={{fav.Imagepath}} />
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content" style="margin: 0 auto;">
+      <p>Made with <mat-icon color="primary">favorite</mat-icon>by <a href="https://elenaharan.github.io/Portfolio_site/" target="_blank">Elena Haran</a></p>
+    </div>
+  </div>
+</footer>
+
+
+</div>
+
+
+
+
+

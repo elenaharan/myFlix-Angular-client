@@ -1,19 +1,27 @@
-<div class="main-page" style="margin-top: 250px; margin-left: 50%;">
-    <h1>
+<div class="main-page">
+  <div class="h1-container">
+    <h1 style="font-weight: 300; font-size: 45px;" fxFlex.xs="100%" fxFlex.sm="50%">
       Welcome to myFlix!
     </h1>
-    <button 
+  </div>
+    
+    <div>
+      <button 
       mat-raised-button
       (click)="openUserRegistrationDialog()"
-      style="margin-right: 10px;"
+      style="margin-right: 10px; margin-top: 100px;"
       color="primary">Sign Up!
     </button>
     <button
       mat-raised-button
       (click)="openUserLoginDialog()"
-      style="margin-right: 10px;"
+      style="margin-right: 10px; margin-top: 100px;"
       color="primary">Log In!
     </button>
+    </div>
+
+    </div>
+    
     
   
   

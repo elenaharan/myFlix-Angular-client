@@ -1,0 +1,47 @@
+.card {
+  height: 500px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  margin-bottom: 10px;
+  padding: 0px;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    transform: scale(1.05);
+  }
+  mat-icon {
+    //color: #89CFF0;
+    //color: #0091ea;
+    //color: #40c4ff;
+  }
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 30px;
+  width: 80%;
+  max-width: 80%;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 25px;
+}
+
+.footer {
+  position: bottom;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-top: 0px;
+  }

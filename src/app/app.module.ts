@@ -20,11 +20,22 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { DirectorViewComponent } from './director-view/director-view.component';
+import { SynopsisComponent } from './synopsis/synopsis.component';
+import { GenreCardComponent } from './genre-card/genre-card.component';
+import { UserProfileComponentComponent } from './user-profile-component/user-profile-component.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
-  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+  { path: 'profile', component: UserProfileComponentComponent},
+  { path: '', redirectTo: 'welcome', pathMatch: 'prefix'},
+  
 ];
 
 @NgModule({
@@ -33,7 +44,13 @@ const appRoutes: Routes = [
     UserRegistrationFormComponent,
     UserLoginFormComponent,
     MovieCardComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    DirectorViewComponent,
+    SynopsisComponent,
+    GenreCardComponent,
+    UserProfileComponentComponent,
+    NavbarComponent,
+    EditUserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +65,12 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatSnackBarModule,
     MatIconModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
   ],
-  providers: [],
+  providers: [MovieCardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,23 +1,60 @@
-<div style="display: flex;">
-  <mat-card *ngFor="let movie of movies; let i=index;" style="flex: 1 1 auto;">
-    <mat-card-header>
-    <mat-card-title>{{movie.Title}}</mat-card-title>
-      <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
-    </mat-card-header>
-    <img src={{movie.Imagepath}} alt= {{movie.Title}} />
-    <mat-card-actions>
-        <button
-          mat-button
-          color="primary"
-          >Director
+<div id="main-body">
+  <app-navbar></app-navbar>
+  <div id="content">
+    <div  class="movies-container" *ngFor="let movie of movies; let i=index;">
+    <mat-card class="card" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%" fxFlex.lg="25%">  
+      <mat-card-header>
+      <mat-card-title>{{movie.Title}}</mat-card-title>
+        <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img src={{movie.Imagepath}} alt={{movie.Title}} />
+      <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="openDirectorDialog(
+              movie.Director.Name,
+              movie.Director.Bio
+            )"
+            >Director
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)"
+          >Genre
         </button>
         <button
-          mat-button
+          mat-raised-button
           color="primary"
+          (click)="
+          openSynopsisDialog(
+            movie.Title,
+            movie.Description
+          )
+          "
           >Synopsis
         </button>
-        <mat-icon>favorite_border</mat-icon>
-    </mat-card-actions>
-  </mat-card>
+        <mat-icon *ngIf="!setFavoriteStatus(movie._id)"
+          color="primary"
+          (click)="addToFavorites(movie._id, movie.Title)"
+          class="favorite-button">favorite_border</mat-icon>
+        <mat-icon *ngIf="setFavoriteStatus(movie._id)"
+          color="primary"
+          (click)="removeFromFavorites(movie._id, movie.Title)"
+          class="favorite-button-active">favorite</mat-icon>       
+      </mat-card-actions>
+    </mat-card>
+    </div>
+
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content" style="margin: 0 auto;">
+        <p>Made with <mat-icon color="primary">favorite</mat-icon>by <a href="https://elenaharan.github.io/Portfolio_site/" target="_blank">Elena Haran</a></p>
+      </div>
+    </div>
+  </footer>
 </div>
+
 
